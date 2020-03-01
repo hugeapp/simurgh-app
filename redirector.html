@@ -1,5 +1,29 @@
 <html>
-  <body onload="window.location = 'http://example.com/'">
+  <body onload="script();">
     <h1>test</h1>
+    
+    
+    <script>
+      
+      function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            vars[key] = value;
+        });
+        return vars;
+      }
+      
+      function script() {
+        var params = getUrlVars();
+        var months = 1;
+        if(params["m"] !== undefined)
+          months = params["m"];
+        
+        location.replace("https://simurgh.test/buy-via-app/"+months)
+      }
+      
+      
+      
+    </script>
   </body>
 </html>
