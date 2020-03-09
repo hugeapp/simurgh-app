@@ -15,11 +15,15 @@
       
       function script() {
         var params = getUrlVars();
-        var months = 1;
-        if(params["m"] !== undefined)
-          months = params["m"];
+        var plan = 1;
+        if(params["plan"] !== undefined)
+          plan = params["plan"];
         
-        location.replace("https://simurgh.test/buy-via-app/"+months)
+        var uuid = "";
+        if(params["uuid"] !== undefined)
+          uuid = params["uuid"];
+        
+        location.replace("https://account.simurgh.online/buy-via-app/"+plan+"/"+uuid)
       }
       
       
