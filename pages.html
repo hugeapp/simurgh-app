@@ -1,0 +1,33 @@
+<html>
+  <body onload="script();">
+    <h1>test</h1>
+    
+    
+    <script>
+      
+      function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            vars[key] = value;
+        });
+        return vars;
+      }
+      
+      function script() {
+        var params = getUrlVars();
+        var name = "";
+        if(params["name"] !== undefined)
+          name = params["name"];
+        
+        var p1 = "";
+        if(params["p1"] !== undefined)
+          p1 = params["p1"];
+        
+        location.replace("https://account.simurgh.online/page/"+name+"/"+p1)
+      }
+      
+      
+      
+    </script>
+  </body>
+</html>
